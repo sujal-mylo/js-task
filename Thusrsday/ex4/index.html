@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            width: 300px;
+            padding: 8px;
+        }
+        #status {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            list-style: none;
+            margin: 10px 0;
+        }
+        img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2>GitHub User Search</h2>
+    <input
+        id="q"
+        placeholder="Search GitHub users..."
+    >
+    <div id="status"></div>
+    <ul id="results"></ul>
+    <script src="script.js"></script>
+</body>
+</html>

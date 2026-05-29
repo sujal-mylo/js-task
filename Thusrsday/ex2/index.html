@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Demo</title>
+
+    <style>
+        ul {
+            width: 300px;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .selected {
+            background: #fff3cd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Team Members</h2>
+
+    <ul id="memberList">
+        <li data-id="1">John</li>
+        <li data-id="2">Alice</li>
+        <li data-id="3">Bob</li>
+        <li data-id="4">Emma</li>
+    </ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

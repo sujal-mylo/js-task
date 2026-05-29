@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Members</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            list-style: none;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Team Members</h2>
+    <ul id="memberList">
+    </ul>
+    <form id="add-member">
+        <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            minlength="2"
+        />
+        <input
+            type="text"
+            name="role"
+            placeholder="Role"
+            required
+        />
+        <button type="submit">
+            Add
+        </button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

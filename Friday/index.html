@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes with Tags</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>📝 Notes with Tags</h1>
+            <p class="subtitle">Keep track of your thoughts, organized by tags</p>
+        </header>
+
+        <main class="app-main">
+            <!-- Add Note Form -->
+            <section class="add-note-section">
+                <h2>Create New Note</h2>
+                <form id="noteForm" class="note-form">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="noteTitle"
+                            placeholder="Note title..."
+                            required
+                            class="form-input"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <textarea
+                            id="noteBody"
+                            placeholder="Write your note here..."
+                            required
+                            class="form-textarea"
+                        ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="noteTags"
+                            placeholder="Tags (comma-separated, e.g. work, meeting)"
+                            class="form-input"
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Note</button>
+                </form>
+            </section>
+
+            <!-- Controls Section -->
+            <section class="controls-section">
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search notes..."
+                        class="form-input"
+                    />
+                </div>
+                <div class="tag-filters">
+                    <span class="filters-label">Filter by tag:</span>
+                    <div id="tagChips" class="tag-chips"></div>
+                    <button id="clearFiltersBtn" class="btn btn-secondary btn-small">Clear Filters</button>
+                </div>
+            </section>
+
+            <!-- Notes Display -->
+            <section class="notes-section">
+                <h2>Your Notes <span id="noteCount" class="note-count">(0)</span></h2>
+                <div id="notesList" class="notes-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+</body>
+</html>
