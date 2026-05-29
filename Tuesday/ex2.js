@@ -82,7 +82,6 @@ const formatProfile = (user) => {
   return `${user.name} | ${city} (${pincode}) | theme: ${theme}`;
 };
 
-
 // Outputs
 
 users.forEach(user => {
