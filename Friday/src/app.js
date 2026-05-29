@@ -4,6 +4,7 @@ import {
   deleteNote,
   getAllTags,
   getFilteredNotes,
+  loadNotesFromStorage,
 } from "./data.js";
 import { renderNotes, renderTagChips, bindEvents, clearForm } from "./ui.js";
 import { debounce, parseTags } from "./utils.js";
@@ -14,6 +15,7 @@ const appState = {
 };
 
 function init() {
+  loadNotesFromStorage();
   updateDisplay();
 
   bindEvents(

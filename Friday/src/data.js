@@ -32,6 +32,25 @@ export const seedNotes = [
 let notes = [...seedNotes];
 let nextId = Math.max(...notes.map((n) => n.id)) + 1;
 
+const STORAGE_KEY = "notes_app_data";
+
+function saveNotesToStorage() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+}
+
+export function loadNotesFromStorage() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    try {
+      notes = JSON.parse(stored);
+      nextId = Math.max(...notes.map((n) => n.id)) + 1;
+    } catch (e) {
+      console.error("Failed to load notes from storage", e);
+      notes = [...seedNotes];
+    }
+  }
+}
+
 export function addNote(title, body, tags = []) {
   const newNote = {
     id: nextId++,
@@ -42,6 +61,7 @@ export function addNote(title, body, tags = []) {
   };
 
   notes.push(newNote);
+  saveNotesToStorage();
   return newNote;
 }
 
@@ -49,6 +69,7 @@ export function deleteNote(id) {
   const index = notes.findIndex((n) => n.id === id);
   if (index !== -1) {
     notes.splice(index, 1);
+    saveNotesToStorage();
     return true;
   }
   return false;
